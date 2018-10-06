@@ -1,0 +1,30 @@
+
+<div class="row">
+  <div class="col-md-12">
+      <nb-card>
+          <nb-card-header>View vidnews</nb-card-header>
+          <nb-card-body>
+              <form  [formGroup]="formvidnews">
+              <div class="form-group">
+                <input required formControlName="Id" title="Id"  type="text" class="form-control" placeholder="Id" id="Id" name="Id" readonly>
+                <!-- <app-validation-error-display [displayError]="isFieldValid('Id')" errorMsg="Required data"></app-validation-error-display> -->
+              </div>
+             
+              <div class="form-group">
+                  <input required formControlName="Title" title="Title" type="text" class="form-control" placeholder="Title" id="Title" name="Title" readonly>
+                  <!-- <app-validation-error-display [displayError]="isFieldValid('Title')" errorMsg="Required data"></app-validation-error-display> -->
+                  
+                </div>
+                  <div class="form-group">
+                      <input required formControlName="URLVideo" title="URLVideo" type="text" class="form-control" placeholder="URLVideo" id="URLVideo" name="URLPhoto" readonly>
+                      <!-- <app-validation-error-display [displayError]="isFieldValid('URLPhoto')" errorMsg="Required data"></app-validation-error-display> -->
+                    </div>
+              
+                
+              <!-- <button type="submit" class="btn btn-success">Send</button> -->
+              <!-- <lib-ngx-notification></lib-ngx-notification> -->
+            </form>
+          </nb-card-body>
+        </nb-card>
+  </div>
+</div>

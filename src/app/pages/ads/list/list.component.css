@@ -1,0 +1,8 @@
+.nb-theme-corporate nb-layout .layout {
+    font-family: Roboto;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #4a4c4e;
+    background: #f1f5f8;
+    min-height: 100vh;
+}

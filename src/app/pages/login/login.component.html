@@ -1,0 +1,113 @@
+    <nb-auth-block>
+<!-- <h2 class="title">Sign In</h2>
+<small class="form-text sub-title">Hello! Sign in with your Name or Name</small>
+<form (ngSubmit)="login()" #form="ngForm" autocomplete="nope">
+  <div *ngIf="showMessages.error && errors && errors.length > 0 && !submitted"
+
+ class="alert alert-danger" role="alert">
+    <div><strong>Oh snap!</strong></div>
+    <div *ngFor="let error of errors">{{ error }}</div>
+  </div>
+  <div *ngIf="showMessages.success && messages && messages.length > 0 && !submitted"
+
+ class="alert alert-success" role="alert">
+    <div><strong>Hooray!</strong></div>
+    <div *ngFor="let message of messages">{{ message }}</div>
+  </div>
+  <div class="form-group">
+    <label for="input-Name" class="sr-only">Name</label>
+    <input name="Name" [(ngModel)]="user.Name" id="input-Name" 
+
+     class="form-control" placeholder="Name" #Name="ngModel"
+
+     [class.form-control-danger]="Name.invalid && Name.touched" autofocus
+
+     [required]="getConfigValue('forms.validation.Name.required')">
+    <small class="form-text error" *ngIf="Name.invalid && Name.touched && Name.errors?.required">
+
+Name is required!
+    </small>
+   
+  </div>
+  <div class="form-group">
+    <label for="input-Password" class="sr-only">Password</label>
+    <input name="Password" [(ngModel)]="user.Password" type="Password" id="input-Password"
+
+     class="form-control" placeholder="Password" #Password="ngModel"
+
+     [class.form-control-danger]="Password.invalid && Password.touched"
+
+     [required]="getConfigValue('forms.validation.Password.required')"
+
+     [minlength]="getConfigValue('forms.validation.Password.minLength')"
+
+     [maxlength]="getConfigValue('forms.validation.Password.maxLength')">
+    <small class="form-text error" *ngIf="Password.invalid && Password.touched && Password.errors?.required">
+
+Password is required!
+    </small>
+    <small
+
+class="form-text error"
+
+*ngIf="Password.invalid && Password.touched && (Password.errors?.minlength || Password.errors?.maxlength)">
+
+Password should contains
+
+from {{ getConfigValue('forms.validation.Password.minLength') }}
+
+to {{ getConfigValue('forms.validation.Password.maxLength') }}
+
+characters
+    </small>
+  </div>
+  <div class="form-group accept-group col-sm-12">
+    <nb-checkbox name="rememberMe" [(ngModel)]="user.rememberMe">Remember me</nb-checkbox>
+    <a class="forgot-Password" routerLink="../request-Password">Forgot Password?</a>
+  </div>
+  <button [disabled]="submitted || !form.valid" class="btn btn-block btn-hero-success"
+
+    [class.btn-pulse]="submitted">
+    Sign In
+  </button>
+</form>
+<div class="links">
+  
+  <small class="form-text">
+    Don't have an account? <a routerLink="../register"><strong>Sign Up</strong></a>
+  </small>
+</div>   -->
+<h1 class="title">IDX-ADMIN</h1>
+<small class="form-text sub-title">Hello! Sign in with your Name</small>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" formControlName="Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Name.errors }" />
+        <div *ngIf="submitted && f.Name.errors" class="invalid-feedback">
+            <div *ngIf="f.Name.errors.required">Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Password">Password</label>
+        <input type="Password" formControlName="Password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Password.errors }" />
+        <div *ngIf="submitted && f.Password.errors" class="invalid-feedback">
+            <div *ngIf="f.Password.errors.required">Password is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <!-- <button [disabled]="loading" class="btn btn-primary">Login</button> -->
+        <button [disabled]="loading" class="btn btn-block btn-hero-success"
+
+    [class.btn-pulse]="submitted">
+    Sign In
+  </button>
+        
+    </div>
+</form>
+<div class="links">
+  
+    <!-- <small class="form-text">
+      Don't have an account? <a routerLink="../register"><strong>Sign Up</strong></a>
+    </small> -->
+  </div>
+</nb-auth-block>   

@@ -1,0 +1,33 @@
+
+<div class="row">
+  <div class="col-md-12">
+      <nb-card>
+          <nb-card-header>Update ads</nb-card-header>
+          <nb-card-body>
+              <form (ngSubmit)="updateads()" [formGroup]="formads">
+              <div class="form-group">
+                <input required formControlName="Id" title="Id"  type="text" class="form-control" placeholder="Id" id="Id" name="Id">
+                <!-- <app-validation-error-display [displayError]="isFieldValid('Id')" errorMsg="Required data"></app-validation-error-display> -->
+              </div>
+              <div class="form-group">
+                  <input required formControlName="Title" title="Title" type="text" class="form-control" placeholder="Title" id="Title" name="Title">
+                  <!-- <app-validation-error-display [displayError]="isFieldValid('Title')" errorMsg="Required data"></app-validation-error-display> -->
+                  
+                </div>
+               
+                  <div class="form-group">
+                      <input required formControlName="URLPhoto" title="URLPhoto" type="text" class="form-control" placeholder="URLPhoto" id="URLPhoto" name="URLPhoto">
+                      <!-- <app-validation-error-display [displayError]="isFieldValid('URLPhoto')" errorMsg="Required data"></app-validation-error-display> -->
+                    </div>
+                    <div class="form-group">
+                        <input required formControlName="Link" title="Link" type="text" class="form-control" placeholder="Link" id="Link" name="Link">
+                        <!-- <app-validation-error-display [displayError]="isFieldValid('URLPhoto')" errorMsg="Required data"></app-validation-error-display> -->
+                      </div>
+                
+               <button type="submit" class="btn btn-success">Update</button>
+              <!-- <lib-ngx-notification></lib-ngx-notification> -->
+            </form>
+          </nb-card-body>
+        </nb-card>
+  </div>
+</div>
